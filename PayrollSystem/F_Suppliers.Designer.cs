@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Suppliers));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gbHeader = new System.Windows.Forms.GroupBox();
+            this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.txtSupplierCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.gbDetails = new System.Windows.Forms.GroupBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtTown = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtMobileNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,32 +52,32 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_FormTitle = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbHeader.SuspendLayout();
+            this.gbDetails.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbHeader
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.txtSupplierCode);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 67);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(748, 106);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Header Details";
+            this.gbHeader.Controls.Add(this.txtSupplierName);
+            this.gbHeader.Controls.Add(this.txtSupplierCode);
+            this.gbHeader.Controls.Add(this.label2);
+            this.gbHeader.Controls.Add(this.label1);
+            this.gbHeader.Location = new System.Drawing.Point(16, 67);
+            this.gbHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.gbHeader.Name = "gbHeader";
+            this.gbHeader.Padding = new System.Windows.Forms.Padding(4);
+            this.gbHeader.Size = new System.Drawing.Size(748, 106);
+            this.gbHeader.TabIndex = 0;
+            this.gbHeader.TabStop = false;
+            this.gbHeader.Text = "Header Details";
             // 
-            // textBox2
+            // txtSupplierName
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(430, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtSupplierName.Location = new System.Drawing.Point(118, 69);
+            this.txtSupplierName.Name = "txtSupplierName";
+            this.txtSupplierName.Size = new System.Drawing.Size(430, 22);
+            this.txtSupplierName.TabIndex = 3;
             // 
             // txtSupplierCode
             // 
@@ -145,71 +145,71 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // groupBox2
+            // gbDetails
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(16, 181);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(748, 331);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Contact Details";
+            this.gbDetails.Controls.Add(this.txtCountry);
+            this.gbDetails.Controls.Add(this.txtCity);
+            this.gbDetails.Controls.Add(this.txtTown);
+            this.gbDetails.Controls.Add(this.txtAddress);
+            this.gbDetails.Controls.Add(this.txtEmail);
+            this.gbDetails.Controls.Add(this.txtMobileNumber);
+            this.gbDetails.Controls.Add(this.label8);
+            this.gbDetails.Controls.Add(this.label7);
+            this.gbDetails.Controls.Add(this.label6);
+            this.gbDetails.Controls.Add(this.label5);
+            this.gbDetails.Controls.Add(this.label3);
+            this.gbDetails.Controls.Add(this.label4);
+            this.gbDetails.Location = new System.Drawing.Point(16, 181);
+            this.gbDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.gbDetails.Name = "gbDetails";
+            this.gbDetails.Padding = new System.Windows.Forms.Padding(4);
+            this.gbDetails.Size = new System.Drawing.Size(748, 331);
+            this.gbDetails.TabIndex = 6;
+            this.gbDetails.TabStop = false;
+            this.gbDetails.Text = "Contact Details";
             // 
-            // textBox8
+            // txtCountry
             // 
-            this.textBox8.Location = new System.Drawing.Point(118, 284);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(202, 22);
-            this.textBox8.TabIndex = 11;
+            this.txtCountry.Location = new System.Drawing.Point(118, 284);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(202, 22);
+            this.txtCountry.TabIndex = 11;
             // 
-            // textBox7
+            // txtCity
             // 
-            this.textBox7.Location = new System.Drawing.Point(118, 246);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(202, 22);
-            this.textBox7.TabIndex = 10;
+            this.txtCity.Location = new System.Drawing.Point(118, 246);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(202, 22);
+            this.txtCity.TabIndex = 10;
             // 
-            // textBox6
+            // txtTown
             // 
-            this.textBox6.Location = new System.Drawing.Point(118, 210);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(202, 22);
-            this.textBox6.TabIndex = 9;
+            this.txtTown.Location = new System.Drawing.Point(118, 210);
+            this.txtTown.Name = "txtTown";
+            this.txtTown.Size = new System.Drawing.Size(202, 22);
+            this.txtTown.TabIndex = 9;
             // 
-            // textBox5
+            // txtAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(118, 105);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 85);
-            this.textBox5.TabIndex = 8;
+            this.txtAddress.Location = new System.Drawing.Point(118, 105);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(202, 85);
+            this.txtAddress.TabIndex = 8;
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(118, 69);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(404, 22);
-            this.textBox4.TabIndex = 7;
+            this.txtEmail.Location = new System.Drawing.Point(118, 69);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(404, 22);
+            this.txtEmail.TabIndex = 7;
             // 
-            // textBox3
+            // txtMobileNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 34);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtMobileNumber.Location = new System.Drawing.Point(118, 34);
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(202, 22);
+            this.txtMobileNumber.TabIndex = 6;
             // 
             // label8
             // 
@@ -299,11 +299,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 569);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbDetails);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbHeader);
             this.Font = new System.Drawing.Font("Ubuntu Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -312,10 +312,10 @@
             this.Name = "F_Suppliers";
             this.Text = "Suppliers";
             this.Load += new System.EventHandler(this.F_Suppliers_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbHeader.ResumeLayout(false);
+            this.gbHeader.PerformLayout();
+            this.gbDetails.ResumeLayout(false);
+            this.gbDetails.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -324,27 +324,27 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbHeader;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbDetails;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.TextBox txtSupplierCode;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCountry;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtTown;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtMobileNumber;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_FormTitle;
     }

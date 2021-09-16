@@ -55,10 +55,50 @@ namespace PayRollSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
                                         Fields fds = null;
+                                        bool bEmptyControlFound = false;
+                                        string szControlDescription = string.Empty;
+                                        bool bErrorFound = false;
+                                        string szErrorMessage = string.Empty;
 
-            fds = ss_dsx.Fields;
-            scx.MoveControlValuesToFields(this,
-                                          ref fds);
+            scx.CheckIfEditableControlValuesAreValid(gbHeader.Controls,
+                                                     ref bEmptyControlFound,
+                                                     ref szControlDescription);
+
+            while (true)
+            {
+                if(bEmptyControlFound)
+                {
+                    utsx.ShowMessage(szControlDescription,
+                                     "Empty Value",
+                                      EnumsCollection.EnumMessageType.emtError);
+                    break;
+                }
+
+                scx.CheckIfEditableControlValuesAreValid(gbDetails.Controls,
+                                                         ref bEmptyControlFound,
+                                                         ref szControlDescription);
+
+                if (bEmptyControlFound)
+                {
+                    utsx.ShowMessage(szControlDescription,
+                                     "Empty Value",
+                                      EnumsCollection.EnumMessageType.emtError);
+                    break;
+                }
+                fds = ss_dsx.Fields;
+
+                scx.MoveControlValuesToFields(gbHeader.Controls,
+                                              ref fds);
+
+                scx.MoveControlValuesToFields(gbDetails.Controls,
+                                              ref fds);
+
+
+                ss_dsx.AddToDataBase(fds,
+                                     ref bErrorFound,
+                                     ref szErrorMessage);
+                break;
+            }
         }
 
 

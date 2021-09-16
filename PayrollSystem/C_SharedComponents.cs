@@ -356,33 +356,47 @@ public class SharedComponents
         nhifrsr = nhifrs;
     }
 
-    public void MoveControlValuesToFields(Form fv,
+    public void MoveControlValuesToFields(Control.ControlCollection ctrlsv,
                                           ref Fields fdsr)
     {
                                         string szFieldKey = string.Empty;
 
-        foreach (Control ctr in fv.Controls)
+        foreach (Control ctr in ctrlsv)
         {
             switch (ctr.GetType().ToString())
             {
-                case "TextBox":
+                case "System.Windows.Forms.TextBox":
                     utsx.GetRightPartOfStringOverIndex(ctr.Name,
                                                        3,
                                                        ref szFieldKey);
-                    break;
+                        fdsr.ItemIsField(szFieldKey).StringValue = ctr.Text;
 
-                case "ComboBox":
+                        break;
 
-                    break;
+                case "System.Windows.Forms.ComboBox":
+                        utsx.GetRightPartOfStringOverIndex(ctr.Name,
+                                                           2,
+                                                           ref szFieldKey);
+                        fdsr.ItemIsField(szFieldKey).StringValue = ctr.Text;
 
-                case "DateTimePicker":
+                        break;
 
-                    break;
+                case "System.Windows.Forms.DateTimePicker":
+                        utsx.GetRightPartOfStringOverIndex(ctr.Name,
+                                                           3,
+                                                           ref szFieldKey);
+                        fdsr.ItemIsField(szFieldKey).StringValue = ctr.Text;
 
-                case "CheckBox":
+                        break;
 
-                    break;
-            }
+                case "System.Windows.Forms.CheckBox":
+                        utsx.GetRightPartOfStringOverIndex(ctr.Name,
+                                                           3,
+                                                           ref szFieldKey);
+                        fdsr.ItemIsField(szFieldKey).StringValue = ctr.Text;
+
+                        break;
+            }                     
         }
     }
 
