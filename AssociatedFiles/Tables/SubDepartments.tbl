@@ -1,0 +1,39 @@
+[Table]
+Name=SubDepartments
+
+[Field_1]
+Key=SubDepartmentId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Sub Department Id
+ValueRequired=True
+
+[Field_2]
+Key=DepartmentId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Department Id
+ValueRequired=True
+
+[Field_3]
+Key=DepartmentName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Department Name
+ValueRequired=True
+
+[Field_4]
+Key=SubDepartmentName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Sub Department Name
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=DepartmentName
+Key_2=SubDepartmentName
+

@@ -1,0 +1,33 @@
+[Table]
+Name=AdministratorInterface
+
+[Field_1]
+Key=EnableInventoryModule
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Enable Inventory Module
+ValueRequired=True
+
+[Field_2]
+Key=EnableProductionModule
+Type=String
+Length=100
+InitialValue=0
+LocalizedName=Enable Production Module
+ValueRequired=True
+
+[Field_3]
+Key=EnablePayrollModule
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Enable Payroll Module
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=EnableInventoryModule
+Key_2=EnableProductionModule
+Key_3=EnablePayrollModule
+
+

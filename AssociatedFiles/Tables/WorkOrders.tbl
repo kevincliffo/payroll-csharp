@@ -1,0 +1,55 @@
+[Table]
+Name=WorkOrders
+
+[Field_1]
+Key=WorkOrderId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Order Id
+ValueRequired=True
+
+[Field_2]
+Key=WorkOrderNumber
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Order Number
+ValueRequired=True
+
+[Field_3]
+Key=WorkOrderTemplateName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Name
+ValueRequired=True
+
+[Field_4]
+Key=WorkOrderTemplateDescription
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Description
+ValueRequired=True
+
+[Field_5]
+Key=WorkOrderTemplateNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Number
+ValueRequired=True
+
+[Field_6]
+Key=Quantity
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Quantity
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=WorkOrderNumber
+
+

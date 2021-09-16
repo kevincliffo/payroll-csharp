@@ -1,0 +1,449 @@
+﻿namespace PayRollSystem
+{
+    partial class F_Main
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Main));
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAttendance = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDefaults = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeductions = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPayRollDeductions = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAttendanceView = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPayRoll = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDepartments = new System.Windows.Forms.ToolStripMenuItem();
+            this.ssMessages = new System.Windows.Forms.StatusStrip();
+            this.tsslMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.tsNavigation = new System.Windows.Forms.ToolStrip();
+            this.tsbFind = new System.Windows.Forms.ToolStripButton();
+            this.tsbNew = new System.Windows.Forms.ToolStripButton();
+            this.tsbFirst = new System.Windows.Forms.ToolStripButton();
+            this.tsbPrevious = new System.Windows.Forms.ToolStripButton();
+            this.tsbNext = new System.Windows.Forms.ToolStripButton();
+            this.tsbLast = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.menuStrip.SuspendLayout();
+            this.ssMessages.SuspendLayout();
+            this.tsNavigation.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenu,
+            this.usersToolStripMenuItem,
+            this.EmployeeToolStripMenuItem,
+            this.reportsToolStripMenuItem,
+            this.windowsMenu,
+            this.tsmiDepartments});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.MdiWindowListItem = this.windowsMenu;
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "MenuStrip";
+            // 
+            // fileMenu
+            // 
+            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAttendance,
+            this.tsmiDefaults,
+            this.tsmiDeductions,
+            this.exitToolStripMenuItem});
+            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(37, 20);
+            this.fileMenu.Text = "&File";
+            // 
+            // tsmiAttendance
+            // 
+            this.tsmiAttendance.Name = "tsmiAttendance";
+            this.tsmiAttendance.Size = new System.Drawing.Size(135, 22);
+            this.tsmiAttendance.Text = "&Attendance";
+            this.tsmiAttendance.Click += new System.EventHandler(this.tsmiAttendance_Click);
+            // 
+            // tsmiDefaults
+            // 
+            this.tsmiDefaults.Name = "tsmiDefaults";
+            this.tsmiDefaults.Size = new System.Drawing.Size(135, 22);
+            this.tsmiDefaults.Text = "&Defaults";
+            this.tsmiDefaults.Click += new System.EventHandler(this.tsmiDefaults_Click);
+            // 
+            // tsmiDeductions
+            // 
+            this.tsmiDeductions.Name = "tsmiDeductions";
+            this.tsmiDeductions.Size = new System.Drawing.Size(135, 22);
+            this.tsmiDeductions.Text = "&Deductions";
+            this.tsmiDeductions.Click += new System.EventHandler(this.tsmiDeductions_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            // 
+            // usersToolStripMenuItem
+            // 
+            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUserToolStripMenuItem,
+            this.viewUsersToolStripMenuItem});
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.usersToolStripMenuItem.Text = "&Users";
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.addUserToolStripMenuItem.Text = "&Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
+            // 
+            // viewUsersToolStripMenuItem
+            // 
+            this.viewUsersToolStripMenuItem.Name = "viewUsersToolStripMenuItem";
+            this.viewUsersToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.viewUsersToolStripMenuItem.Text = "&View Users";
+            this.viewUsersToolStripMenuItem.Click += new System.EventHandler(this.viewUsersToolStripMenuItem_Click);
+            // 
+            // EmployeeToolStripMenuItem
+            // 
+            this.EmployeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addEmployeeToolStripMenuItem,
+            this.tsmiPayRollDeductions,
+            this.viewEmployeesToolStripMenuItem,
+            this.tsmiAttendanceView});
+            this.EmployeeToolStripMenuItem.Name = "EmployeeToolStripMenuItem";
+            this.EmployeeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.EmployeeToolStripMenuItem.Text = "&Employee";
+            // 
+            // addEmployeeToolStripMenuItem
+            // 
+            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.addEmployeeToolStripMenuItem.Text = "&Add Employee";
+            this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
+            // 
+            // tsmiPayRollDeductions
+            // 
+            this.tsmiPayRollDeductions.Name = "tsmiPayRollDeductions";
+            this.tsmiPayRollDeductions.Size = new System.Drawing.Size(179, 22);
+            this.tsmiPayRollDeductions.Text = "&Pay Roll Deductions";
+            this.tsmiPayRollDeductions.Click += new System.EventHandler(this.tsmiPayRollDeductions_Click);
+            // 
+            // viewEmployeesToolStripMenuItem
+            // 
+            this.viewEmployeesToolStripMenuItem.Name = "viewEmployeesToolStripMenuItem";
+            this.viewEmployeesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.viewEmployeesToolStripMenuItem.Text = "&View Employees";
+            this.viewEmployeesToolStripMenuItem.Click += new System.EventHandler(this.viewEmployeesToolStripMenuItem_Click);
+            // 
+            // tsmiAttendanceView
+            // 
+            this.tsmiAttendanceView.Name = "tsmiAttendanceView";
+            this.tsmiAttendanceView.Size = new System.Drawing.Size(179, 22);
+            this.tsmiAttendanceView.Text = "A&ttendance View";
+            this.tsmiAttendanceView.Click += new System.EventHandler(this.tsmiAttendanceView_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usersReportToolStripMenuItem,
+            this.tsmiPayRoll});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "&Reports";
+            // 
+            // usersReportToolStripMenuItem
+            // 
+            this.usersReportToolStripMenuItem.Name = "usersReportToolStripMenuItem";
+            this.usersReportToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.usersReportToolStripMenuItem.Text = "&Users Report";
+            this.usersReportToolStripMenuItem.Click += new System.EventHandler(this.usersReportToolStripMenuItem_Click);
+            // 
+            // tsmiPayRoll
+            // 
+            this.tsmiPayRoll.Name = "tsmiPayRoll";
+            this.tsmiPayRoll.Size = new System.Drawing.Size(140, 22);
+            this.tsmiPayRoll.Text = "&PayRoll";
+            this.tsmiPayRoll.Click += new System.EventHandler(this.tsmiPayRoll_Click);
+            // 
+            // windowsMenu
+            // 
+            this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWindowToolStripMenuItem,
+            this.cascadeToolStripMenuItem,
+            this.tileVerticalToolStripMenuItem,
+            this.tileHorizontalToolStripMenuItem,
+            this.closeAllToolStripMenuItem,
+            this.arrangeIconsToolStripMenuItem});
+            this.windowsMenu.Name = "windowsMenu";
+            this.windowsMenu.Size = new System.Drawing.Size(68, 20);
+            this.windowsMenu.Text = "&Windows";
+            // 
+            // newWindowToolStripMenuItem
+            // 
+            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newWindowToolStripMenuItem.Text = "&New Window";
+            // 
+            // cascadeToolStripMenuItem
+            // 
+            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cascadeToolStripMenuItem.Text = "&Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            // 
+            // tileVerticalToolStripMenuItem
+            // 
+            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
+            this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
+            // 
+            // tileHorizontalToolStripMenuItem
+            // 
+            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
+            this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
+            // 
+            // closeAllToolStripMenuItem
+            // 
+            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeAllToolStripMenuItem.Text = "C&lose All";
+            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
+            // 
+            // arrangeIconsToolStripMenuItem
+            // 
+            this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
+            this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
+            // 
+            // tsmiDepartments
+            // 
+            this.tsmiDepartments.Name = "tsmiDepartments";
+            this.tsmiDepartments.Size = new System.Drawing.Size(87, 20);
+            this.tsmiDepartments.Text = "&Departments";
+            this.tsmiDepartments.Click += new System.EventHandler(this.tsmiDepartments_Click);
+            // 
+            // ssMessages
+            // 
+            this.ssMessages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslMessage});
+            this.ssMessages.Location = new System.Drawing.Point(0, 431);
+            this.ssMessages.Name = "ssMessages";
+            this.ssMessages.Size = new System.Drawing.Size(775, 22);
+            this.ssMessages.TabIndex = 2;
+            this.ssMessages.Text = "StatusStrip";
+            // 
+            // tsslMessage
+            // 
+            this.tsslMessage.Name = "tsslMessage";
+            this.tsslMessage.Size = new System.Drawing.Size(39, 17);
+            this.tsslMessage.Text = "Status";
+            // 
+            // tsNavigation
+            // 
+            this.tsNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tsNavigation.AutoSize = false;
+            this.tsNavigation.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsNavigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbFind,
+            this.tsbNew,
+            this.tsbFirst,
+            this.tsbPrevious,
+            this.tsbNext,
+            this.tsbLast,
+            this.tsbDelete});
+            this.tsNavigation.Location = new System.Drawing.Point(0, 24);
+            this.tsNavigation.Name = "tsNavigation";
+            this.tsNavigation.Size = new System.Drawing.Size(775, 25);
+            this.tsNavigation.TabIndex = 4;
+            this.tsNavigation.Text = "toolStrip1";
+            this.tsNavigation.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsNavigation_ItemClicked);
+            // 
+            // tsbFind
+            // 
+            this.tsbFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbFind.Image = ((System.Drawing.Image)(resources.GetObject("tsbFind.Image")));
+            this.tsbFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFind.Name = "tsbFind";
+            this.tsbFind.Size = new System.Drawing.Size(23, 22);
+            this.tsbFind.Text = "Find";
+            this.tsbFind.Click += new System.EventHandler(this.tsbFind_Click);
+            // 
+            // tsbNew
+            // 
+            this.tsbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsbNew.Image")));
+            this.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNew.Name = "tsbNew";
+            this.tsbNew.Size = new System.Drawing.Size(23, 22);
+            this.tsbNew.Text = "New";
+            this.tsbNew.Click += new System.EventHandler(this.tsbNew_Click);
+            // 
+            // tsbFirst
+            // 
+            this.tsbFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbFirst.Image = ((System.Drawing.Image)(resources.GetObject("tsbFirst.Image")));
+            this.tsbFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFirst.Name = "tsbFirst";
+            this.tsbFirst.Size = new System.Drawing.Size(23, 22);
+            this.tsbFirst.Text = "First Record";
+            this.tsbFirst.Click += new System.EventHandler(this.tsbFirst_Click);
+            // 
+            // tsbPrevious
+            // 
+            this.tsbPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPrevious.Image = ((System.Drawing.Image)(resources.GetObject("tsbPrevious.Image")));
+            this.tsbPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPrevious.Name = "tsbPrevious";
+            this.tsbPrevious.Size = new System.Drawing.Size(23, 22);
+            this.tsbPrevious.Text = "Previous Record";
+            this.tsbPrevious.Click += new System.EventHandler(this.tsbPrevious_Click);
+            // 
+            // tsbNext
+            // 
+            this.tsbNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNext.Image = ((System.Drawing.Image)(resources.GetObject("tsbNext.Image")));
+            this.tsbNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNext.Name = "tsbNext";
+            this.tsbNext.Size = new System.Drawing.Size(23, 22);
+            this.tsbNext.Text = "Next Record";
+            this.tsbNext.Click += new System.EventHandler(this.tsbNext_Click);
+            // 
+            // tsbLast
+            // 
+            this.tsbLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbLast.Image = ((System.Drawing.Image)(resources.GetObject("tsbLast.Image")));
+            this.tsbLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLast.Name = "tsbLast";
+            this.tsbLast.Size = new System.Drawing.Size(23, 22);
+            this.tsbLast.Text = "Last Record";
+            this.tsbLast.Click += new System.EventHandler(this.tsbLast_Click);
+            // 
+            // tsbDelete
+            // 
+            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbDelete.Image")));
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Text = "Delete";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
+            // 
+            // F_Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.tsNavigation);
+            this.Controls.Add(this.ssMessages);
+            this.Controls.Add(this.menuStrip);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip;
+            this.Name = "F_Main";
+            this.Text = "Payroll Management System";
+            this.Load += new System.EventHandler(this.F_Main_Load);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.ssMessages.ResumeLayout(false);
+            this.ssMessages.PerformLayout();
+            this.tsNavigation.ResumeLayout(false);
+            this.tsNavigation.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+        #endregion
+
+
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.StatusStrip ssMessages;
+        private System.Windows.Forms.ToolStripStatusLabel tsslMessage;
+        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windowsMenu;
+        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmployeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip tsNavigation;
+        private System.Windows.Forms.ToolStripButton tsbFirst;
+        private System.Windows.Forms.ToolStripButton tsbPrevious;
+        private System.Windows.Forms.ToolStripButton tsbNext;
+        private System.Windows.Forms.ToolStripButton tsbLast;
+        private System.Windows.Forms.ToolStripButton tsbFind;
+        private System.Windows.Forms.ToolStripButton tsbNew;
+        private System.Windows.Forms.ToolStripButton tsbDelete;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPayRollDeductions;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPayRoll;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAttendance;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDefaults;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeductions;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAttendanceView;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDepartments;
+    }
+}
+
+
+

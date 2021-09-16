@@ -1,0 +1,87 @@
+[Table]
+Name=WorkOrderEmployeeWorkDatas
+
+[Field_1]
+Key=WorkOrderNumber
+Type=Integer
+Length=0
+InitialValue=
+LocalizedName=Work Order Number
+ValueRequired=True
+
+[Field_2]
+Key=WorkOrderTemplateName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Name
+ValueRequired=True
+
+[Field_3]
+Key=WorkOrderTemplateNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Number
+ValueRequired=True
+
+[Field_4]
+Key=EmployeeId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Employee Id
+ValueRequired=True
+
+[Field_5]
+Key=FirstName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=First Name
+ValueRequired=True
+
+[Field_6]
+Key=LastName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Last Name
+ValueRequired=True
+
+[Field_7]
+Key=OtherName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Other Name
+ValueRequired=True
+
+[Field_8]
+Key=AttachedWorkName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Attached Work Name
+ValueRequired=True
+
+[Field_9]
+Key=AttachedWorkNumber
+Type=Integer
+Length=0
+InitialValue=
+LocalizedName=Attached Work Number
+ValueRequired=True
+
+[Field_10]
+Key=WorkCost
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Work Cost
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=WorkOrderNumber
+Key_2=AttachedWorkName
+

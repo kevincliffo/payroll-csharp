@@ -1,0 +1,38 @@
+[Table]
+Name=defaults
+
+[Field_1]
+Key=DefaultId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Default Id
+ValueRequired=True
+
+[Field_2]
+Key=DefaultName
+Type=String
+Length=200
+InitialValue=
+LocalizedName=Default Name
+ValueRequired=True
+
+[Field_3]
+Key=DefaultDescription
+Type=String
+Length=200
+InitialValue=
+LocalizedName=Default Description
+ValueRequired=True
+
+[Field_4]
+Key=Value
+Type=String
+Length=200
+InitialValue=
+LocalizedName=Value
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=DefaultId
+

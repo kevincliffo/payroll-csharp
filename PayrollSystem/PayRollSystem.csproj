@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7B2E4FC-4310-42FD-B90B-D37485F3D8C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayRollSystem</RootNamespace>
+    <AssemblyName>PayRollSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\AssociatedFiles\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PayRollSystem.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="crdb_adoplus">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\crdb_adoplus.dll</HintPath>
+    </Reference>
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C_SharedComponents.cs" />
+    <Compile Include="F_AdminInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AdminInterface.Designer.cs">
+      <DependentUpon>F_AdminInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AttendanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AttendanceView.Designer.cs">
+      <DependentUpon>F_AttendanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_CFLWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CFLWorks.Designer.cs">
+      <DependentUpon>F_CFLWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Defaults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Defaults.Designer.cs">
+      <DependentUpon>F_Defaults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Departments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Departments.Designer.cs">
+      <DependentUpon>F_Departments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_InitializeSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_InitializeSystem.Designer.cs">
+      <DependentUpon>F_InitializeSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ItemsMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ItemsMaster.Designer.cs">
+      <DependentUpon>F_ItemsMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_LicenseActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_LicenseActivation.Designer.cs">
+      <DependentUpon>F_LicenseActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Login.Designer.cs">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Main.Designer.cs">
+      <DependentUpon>F_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_NHIFRates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_NHIFRates.Designer.cs">
+      <DependentUpon>F_NHIFRates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_NSSFRates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_NSSFRates.Designer.cs">
+      <DependentUpon>F_NSSFRates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Payroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Payroll.Designer.cs">
+      <DependentUpon>F_Payroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_PayrollCasual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_PayrollCasual.Designer.cs">
+      <DependentUpon>F_PayrollCasual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_PayRollList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_PayRollList.Designer.cs">
+      <DependentUpon>F_PayRollList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_ReportViewer.Designer.cs">
+      <DependentUpon>F_ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Attendance.Designer.cs">
+      <DependentUpon>F_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_SplashScreen.Designer.cs">
+      <DependentUpon>F_SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_StaffMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_StaffMaster.Designer.cs">
+      <DependentUpon>F_StaffMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Suppliers.Designer.cs">
+      <DependentUpon>F_Suppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Work.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Work.Designer.cs">
+      <DependentUpon>F_Work.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_CFLMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CFLMaterials.Designer.cs">
+      <DependentUpon>F_CFLMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_WorkOrder.Designer.cs">
+      <DependentUpon>F_WorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_WorkOrderTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_WorkOrderTemplate.Designer.cs">
+      <DependentUpon>F_WorkOrderTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_WorkOrderTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_WorkOrderTemplates.Designer.cs">
+      <DependentUpon>F_WorkOrderTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Table.Designer.cs">
+      <DependentUpon>F_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Users.Designer.cs">
+      <DependentUpon>F_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_AdminInterface.resx">
+      <DependentUpon>F_AdminInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AttendanceView.resx">
+      <DependentUpon>F_AttendanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_CFLMaterials.resx">
+      <DependentUpon>F_CFLMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_CFLWorks.resx">
+      <DependentUpon>F_CFLWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Defaults.resx">
+      <DependentUpon>F_Defaults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Departments.resx">
+      <DependentUpon>F_Departments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_InitializeSystem.resx">
+      <DependentUpon>F_InitializeSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ItemsMaster.resx">
+      <DependentUpon>F_ItemsMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_LicenseActivation.resx">
+      <DependentUpon>F_LicenseActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Login.resx">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Main.resx">
+      <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_NHIFRates.resx">
+      <DependentUpon>F_NHIFRates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_NSSFRates.resx">
+      <DependentUpon>F_NSSFRates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Payroll.resx">
+      <DependentUpon>F_Payroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_PayrollCasual.resx">
+      <DependentUpon>F_PayrollCasual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_PayRollList.resx">
+      <DependentUpon>F_PayRollList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_ReportViewer.resx">
+      <DependentUpon>F_ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Attendance.resx">
+      <DependentUpon>F_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_SplashScreen.resx">
+      <DependentUpon>F_SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_StaffMaster.resx">
+      <DependentUpon>F_StaffMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Suppliers.resx">
+      <DependentUpon>F_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Work.resx">
+      <DependentUpon>F_Work.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_WorkOrder.resx">
+      <DependentUpon>F_WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_WorkOrderTemplate.resx">
+      <DependentUpon>F_WorkOrderTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_WorkOrderTemplates.resx">
+      <DependentUpon>F_WorkOrderTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Table.resx">
+      <DependentUpon>F_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Users.resx">
+      <DependentUpon>F_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Ubuntu-B.ttf" />
+    <None Include="Resources\Ubuntu-BI.ttf" />
+    <None Include="Resources\Ubuntu-L.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CollectionClasses\CollectionClasses.csproj">
+      <Project>{2467DAA2-15E6-4B06-A61C-DE2FE1290521}</Project>
+      <Name>CollectionClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomGrid\CustomGrid.csproj">
+      <Project>{E533C2CD-0CAE-43B7-89F2-0F95B0DA9865}</Project>
+      <Name>CustomGrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseManagement\DataBaseManagement.csproj">
+      <Project>{B29760CE-BC6A-4927-8167-CB65F844DC4C}</Project>
+      <Name>DataBaseManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{F78DC38A-E031-4591-8B24-12AA85B9412C}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reports\Reports.csproj">
+      <Project>{4584D58C-874A-4BFF-81F3-789C6A23116E}</Project>
+      <Name>Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{AED2EAED-085C-480E-ABAD-8F05A2A9B918}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\victor-technologies-quality-management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="PROMPTINGLib">
+      <Guid>{8106BAD6-FB6E-49D5-8368-3F7030C9F6E7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

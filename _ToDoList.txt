@@ -1,0 +1,2 @@
+1. Initialize all Data Servers at start up
+2. When Record Launched from List enable Update *******

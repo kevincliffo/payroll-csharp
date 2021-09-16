@@ -1,0 +1,611 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using DataBaseManagement;
+using Utilities;
+using Models;
+using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using Reports;
+using  CollectionClasses;
+
+namespace PayRollSystem
+{
+    public partial class F_Main : Form
+    {
+        private DatabaseConnection dbcx = null;
+        private Utilities.Utilities utsx = null;
+        private Users_DS u_dsx = null;
+        private Employees_DS es_dsx = null;
+        private Attendance_DS a_dsx = null;
+        private StatusBarHandler sbhx = null;
+        private ApplicationPathCarrier apcx = null;
+        private dynamic dyxDataServer = null;
+        //private dynamic dyxMasterForm = null;
+        private FormUtilities fusx = null;
+        private NHIFRates nhifrsx = null;
+        private License_DS l_dsx = null;
+
+        public delegate void delPrepareFormForAdd(string szvFormKey);
+
+        //public event delPrepareFormForAdd PrepareFormForAdd;
+
+
+        public delegate void delRecordNavigationTasks(string szvFormKey,
+                                                      EnumsCollection.EnumRecordNavigationTasks erntv);
+
+        public event delRecordNavigationTasks RecordNavigationTasks;
+        private bool bxByPassShutDownPrompt = false;
+
+        public F_Main(DatabaseConnection dbcv)
+        {
+            dbcx = dbcv;
+            apcx = new ApplicationPathCarrier(Application.StartupPath);
+            utsx = new Utilities.Utilities();
+            u_dsx = new Users_DS(dbcx);
+            es_dsx = new Employees_DS(dbcx);
+            a_dsx = new Attendance_DS(dbcx);
+            fusx = new FormUtilities();
+            nhifrsx = new NHIFRates();
+            l_dsx = new License_DS(dbcx);
+
+            InitializeComponent();
+        }
+
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.ArrangeIcons);
+        }
+
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                                        bool bValidUser = false;
+
+            while(true)
+            {
+                bValidUser = dbcx.EnumUserType == EnumsCollection.EnumUserType.eutAdministrator;
+
+                if (!bValidUser) 
+                {
+                    utsx.ShowMessage("User does not have permissions to launch form",
+                                     "Permissions",
+                                     EnumsCollection.EnumMessageType.emtError); 
+                    break;
+                }
+
+                F_Users f_Users = new F_Users(this, dbcx, fusx, null, EnumsCollection.EnumFormMode.efmAdd);
+                f_Users.MdiParent = this;
+                f_Users.Show();
+                break;
+            }
+        }
+
+        private void XX_DoLicenseTasksOnLaunchIf()
+        {
+            if (System.Diagnostics.Debugger.IsAttached == false)
+            {
+                XX_DoLicenseTasksOnLaunch();
+            }
+        }
+
+        private void XX_DoLicenseTasksOnLaunch()
+        {
+                                        string szLicenseValue = string.Empty;
+                                        string szDecryptedLicenseValue = string.Empty;
+                                        Fields fds = null;
+                                        string szErrorMessage = string.Empty;
+                                        bool bErrorFound = false;
+                                        bool bNothingFound = false;
+                                        bool bIsNumeric = false;
+                                        long lLicenseValue = 0;
+                                        long lNewLicenseValue = 0;
+                                        string szNewLicenseValue = string.Empty;
+
+            while(true)
+            {
+                l_dsx.GetFirstRecordFromDataBase(ref fds,
+                                                 ref bNothingFound,
+                                                 ref bErrorFound,
+                                                 ref szErrorMessage);
+
+                if (bNothingFound)
+                {
+                    break;
+                }
+
+                if (bErrorFound)
+                {
+                    utsx.ShowMessage(szErrorMessage,
+                                     EnumsCollection.EnumMessageType.emtError);
+                    break;
+                }
+
+                szLicenseValue = fds.ItemIsField("LicenseValue").StringValue;
+
+                utsx.Decrypt(szLicenseValue,
+                             ref szDecryptedLicenseValue);
+
+                szDecryptedLicenseValue = szDecryptedLicenseValue.Trim();
+                bIsNumeric = utsx.StringValueIsNumeric(szDecryptedLicenseValue);
+
+                if (bIsNumeric)
+                {
+                    lLicenseValue = Convert.ToInt64(szDecryptedLicenseValue);
+                    if (lLicenseValue >= 5)
+                    {
+                        bxByPassShutDownPrompt = true;
+                        utsx.ShowMessage("Your License has expired Contact Support ..!!!",
+                                         EnumsCollection.EnumMessageType.emtInformation);
+                        Application.Exit();
+                    }
+
+                    lNewLicenseValue = lLicenseValue
+                                     + 1;
+
+                    szNewLicenseValue = Convert.ToString(lNewLicenseValue);
+
+                    utsx.Encrypt(szNewLicenseValue,
+                                 ref szLicenseValue);
+                    fds.ItemIsField("LicenseValue").StringValue = szLicenseValue;
+
+                    l_dsx.UpdateDataInDataBase(fds,
+                                               ref bErrorFound,
+                                               ref szErrorMessage);
+                }
+                break;
+            }
+        }
+
+        private void F_Main_Load(object sender, EventArgs e)
+        {
+                                        Icon ic = new Icon(apcx.IconsPath + "\\system.ico");
+
+            this.Icon = ic;
+            tsNavigation.Enabled = false;
+            this.FormClosed += new FormClosedEventHandler(F_Main_FormClosed);
+            this.FormClosing += new FormClosingEventHandler(F_Main_FormClosing);
+            utsx.DisplayMessageInStatusBar += new Utilities.Utilities.delDisplayMessageInStatusBar(utsx_DisplayMessageInStatusBar);
+            this.MdiChildActivate += new EventHandler(F_Main_MdiChildActivate);
+            sbhx = new StatusBarHandler(tsslMessage);
+
+            XX_GetNHIFRates();
+            XX_DoLicenseTasksOnLaunchIf();
+
+        }
+
+        private void XX_GetNHIFRates()
+        { 
+                                        NHIFRate nhifr = null;
+                                        FileAccessor fa = new FileAccessor();
+                                        Utilities.Section sec = null;
+                                        string szNHIFRatesTablePath = string.Empty;
+                                        bool bSectionExists = false;
+                                        bool bValueNotFound = false;
+                                        string szSectionName = string.Empty;
+                                        string szValue = string.Empty;
+                                        long lCounter = 1;
+
+            szNHIFRatesTablePath = apcx.TablesPath
+                                 + "\\NHIFRates.tbl";
+            fa.ConnectToFile(szNHIFRatesTablePath, 
+                             EnumsCollection.EnumFileAccessType.efatRead);
+
+            while (true)
+            {
+                szSectionName = "Key_" + lCounter.ToString();
+
+                bSectionExists = fa.Sections.KeyExist(szSectionName);
+
+                if (!bSectionExists)
+                {
+                    break;
+                }
+                sec = fa.Sections.ItemIsSection(szSectionName);
+
+                nhifrsx.AddNHIFRate(lCounter.ToString(),
+                                    ref nhifr);
+
+                fa.GetValue(szSectionName,
+                            "Id",
+                            ref szValue,
+                            ref bValueNotFound);
+                nhifr.NHIFRateId = Convert.ToInt32(szValue);
+
+                fa.GetValue(szSectionName,
+                            "From",
+                            ref szValue,
+                            ref bValueNotFound);
+                nhifr.From = Convert.ToDouble(szValue);
+
+                fa.GetValue(szSectionName,
+                            "To",
+                            ref szValue,
+                            ref bValueNotFound);
+                nhifr.To = Convert.ToDouble(szValue);
+
+                fa.GetValue(szSectionName,
+                            "Rate",
+                            ref szValue,
+                            ref bValueNotFound);
+                nhifr.Rate = Convert.ToDouble(szValue);
+
+                lCounter = lCounter + 1;
+            }
+
+            dbcx.NHIFRates = nhifrsx;
+        }
+
+        void F_Main_MdiChildActivate(object sender, EventArgs e)
+        {
+                                        Form frmActive = this.ActiveMdiChild;
+                                        bool bEnableDataNavigation = false;
+            
+            while(true)
+            {
+                if(frmActive == null)
+                {
+                    bEnableDataNavigation = false;
+                    break;
+                }
+
+                while(true)
+                {
+                    if(frmActive.Name.StartsWith("F_ReportViewer"))
+                    {
+                        bEnableDataNavigation = false;
+                        break;
+                    }
+
+                    if(frmActive.Name.StartsWith("F_Table"))
+                    {
+                        bEnableDataNavigation = false;
+                        break;
+                    }
+
+                    if(frmActive.Name.StartsWith("F_Employees"))
+                    {
+                        bEnableDataNavigation = true;
+                        dyxDataServer = es_dsx;
+                        break;
+                    }
+
+                    if (frmActive.Name.StartsWith("F_Users"))
+                    {
+                        bEnableDataNavigation = true;
+                        dyxDataServer = u_dsx;
+                        break;
+                    }
+
+                    bEnableDataNavigation = false;
+                    break;
+                }
+
+                break;
+            }
+
+            tsNavigation.Enabled = bEnableDataNavigation;
+
+        }
+
+        void F_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                                        bool bCancelExit = false;
+
+            while(true)
+            {
+                if (bxByPassShutDownPrompt)
+                {
+                    bCancelExit = false;
+                    break;
+                }
+
+                Form frm = (Form)sender;
+
+                string szName = frm.Name;
+                DialogResult dResult = MessageBox.Show("Are you sure you want to Close the application? ", 
+                                                       "Exit",
+                                                        MessageBoxButtons.YesNo, 
+                                                        MessageBoxIcon.Question);
+                switch(dResult)
+                {
+                    case DialogResult.Yes:
+                        bCancelExit = false;
+                        break;
+
+                    case DialogResult.No:
+                        bCancelExit = true;
+                        break;
+                }
+                break;
+            }
+            e.Cancel = bCancelExit;
+        }
+
+        void utsx_DisplayMessageInStatusBar(string szvMessage, 
+                                            EnumsCollection.EnumMessageType emtv)
+        {
+            sbhx.ShowStatusBarMessage(szvMessage, 
+                                      emtv);
+        }
+
+        void F_Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void usersReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                                        string szReportPath = string.Empty;
+                                        F_ReportViewer f_Viewer = new F_ReportViewer(dbcx);
+                                        ReportDocument doc = new ReportDocument();
+                                        DataSet ds = null;
+                                        DataTable dtReport = new DataTable();
+                                        Reports.ReportDataSets.dsUsers dsUsers = new Reports.ReportDataSets.dsUsers();
+            
+            dtReport.TableName = "Users";
+            dbcx.ExecuteSQL("SELECT * FROM users", ref ds);
+            dtReport = ds.Tables[0];
+            dsUsers.Tables[0].Merge(dtReport);
+
+            szReportPath = dbcx.ApplicationPathCarrier.ReportsPath
+                         + @"\crUsers.rpt";
+            doc.Load(szReportPath);
+            doc.SetDataSource(dsUsers);
+            f_Viewer.LaunchReport("Users",
+                                  doc);
+
+            f_Viewer.Show();
+        }
+
+        private void viewUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            F_Table tbl_Users = new F_Table(this,
+                                            dbcx,
+                                            fusx,
+                                            "Users",
+                                            u_dsx);
+            tbl_Users.MdiParent = this;
+            tbl_Users.Show();
+
+        }
+
+        private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Employees f_Employees = new F_Employees(this, dbcx, fusx, null, EnumsCollection.EnumFormMode.efmAdd);
+            f_Employees.MdiParent = this;
+            f_Employees.Show();
+        }
+
+        private void viewEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Table tbl_Employees = new F_Table(this,
+                                               dbcx,
+                                               fusx,
+                                               "Employees",
+                                               es_dsx);
+            tbl_Employees.MdiParent = this;
+            tbl_Employees.Show();            
+        }
+
+        private void feesBalanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Attendance f_FeesPayments = new F_Attendance(this,
+                                                               dbcx,
+                                                               null,
+                                                               EnumsCollection.EnumFormMode.efmAdd);
+            f_FeesPayments.MdiParent = this;
+            f_FeesPayments.Show();
+        }
+         
+        private void tsbFirst_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntMoveToFirstRecord);
+            }
+        }
+
+        private void XX_GetId(ref string szrId)
+        {
+
+            foreach (Control c in this.ActiveMdiChild.Controls)
+            {
+                if (c.Name == "txtId")
+                {
+                    szrId = c.Text;
+                    break;
+                }
+            }
+        }
+
+        private void tsbPrevious_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntMoveToPreviousRecord);
+            }
+        }
+
+        private void tsbNext_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntMoveToNextRecord);
+            }
+        }
+
+        private void tsbLast_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntMoveToLastRecord);
+            }
+        }
+
+        private void tsbNew_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntNewRecord);
+            }
+        }
+
+        private void tsbFind_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntFindRecord);
+            }
+        }
+
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            if (RecordNavigationTasks != null)
+            {
+                RecordNavigationTasks(this.ActiveMdiChild.Name,
+                                      EnumsCollection.EnumRecordNavigationTasks.erntRemoveRecord);
+            }
+        }
+
+        private void tsmiDefaults_Click(object sender, EventArgs e)
+        {
+            F_Defaults f_Defaults = new F_Defaults(this, dbcx, fusx);
+
+            f_Defaults.MdiParent = this;
+            f_Defaults.Show();
+        }
+
+        private void tsmiPayRollDeductions_Click(object sender, EventArgs e)
+        {
+            F_PayRollDeductions f_PayRollDeductions = new F_PayRollDeductions(this, tsslMessage, dbcx, fusx);
+
+            f_PayRollDeductions.MdiParent = this;
+            f_PayRollDeductions.Show();
+        }
+
+        private void tsmiAttendance_Click(object sender, EventArgs e)
+        {
+            F_Attendance f_Attendance = new F_Attendance(this, dbcx, null, EnumsCollection.EnumFormMode.efmAdd);
+
+            f_Attendance.MdiParent = this;
+            f_Attendance.Show();
+        }
+
+        private void tsmiPayRoll_Click(object sender, EventArgs e)
+        {
+                                        string szReportPath = string.Empty;
+                                        F_ReportViewer f_Viewer = new F_ReportViewer(dbcx);
+                                        ReportDocument doc = new ReportDocument();
+                                        DataSet ds = null;
+                                        DataTable dtReport = new DataTable();
+                                        Reports.ReportDataSets.dsPayRoll dsPayRoll = new Reports.ReportDataSets.dsPayRoll();
+            
+            dtReport.TableName = "PayRollCalculation";
+            dbcx.ExecuteSQL("SELECT * FROM payrollcalculation", ref ds);
+            dtReport = ds.Tables[0];
+            dsPayRoll.Tables[0].Merge(dtReport);
+
+            szReportPath = dbcx.ApplicationPathCarrier.ReportsPath
+                         + @"\crPayRoll.rpt";
+            doc.Load(szReportPath);
+            doc.SetDataSource(dsPayRoll);
+            f_Viewer.LaunchReport("PayRollCalculation",
+                                  doc);
+
+            f_Viewer.Show();
+        }
+
+        private void tsmiDeductions_Click(object sender, EventArgs e)
+        {
+            F_Deductions f_Deductions = new F_Deductions(this, dbcx, fusx);
+
+            f_Deductions.MdiParent = this;
+            f_Deductions.Show();
+
+        }
+
+        private void tsbEmployees_Click(object sender, EventArgs e)
+        {
+            F_Employees f_Employees = new F_Employees(this, dbcx, fusx, null, EnumsCollection.EnumFormMode.efmFind);
+            f_Employees.MdiParent = this;
+            f_Employees.Show();
+        }
+
+        private void tsbUsers_Click(object sender, EventArgs e)
+        {
+            F_Users f_Users = new F_Users(this, dbcx, fusx, null, EnumsCollection.EnumFormMode.efmFind);
+            f_Users.MdiParent = this;
+            f_Users.Show();
+        }
+
+        private void tsmiLogout_Click(object sender, EventArgs e)
+        {
+            bxByPassShutDownPrompt = true;
+            this.Close();
+
+        }
+
+        private void tsbPayRoll_Click(object sender, EventArgs e)
+        {
+            F_PayRollDeductions f_PayRollDeductions = new F_PayRollDeductions(this, tsslMessage, dbcx, fusx);
+
+            f_PayRollDeductions.MdiParent = this;
+            f_PayRollDeductions.Show();
+        }
+
+        private void tsNavigation_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void tsmiAttendanceView_Click(object sender, EventArgs e)
+        {
+            F_AttendanceView f_AttendanceView = new F_AttendanceView(this, dbcx, fusx);
+
+            f_AttendanceView.MdiParent = this;
+            f_AttendanceView.Show();
+        }
+
+    }
+}

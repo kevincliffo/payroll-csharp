@@ -1,0 +1,103 @@
+[Table]
+Name=WorkOrderWorks
+
+[Field_1]
+Key=WorkOrderNumber
+Type=Integer
+Length=0
+InitialValue=
+LocalizedName=Work Order Number
+ValueRequired=True
+
+[Field_2]
+Key=WorkOrderTemplateName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Name
+ValueRequired=True
+
+[Field_3]
+Key=WorkOrderTemplateNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Number
+ValueRequired=True
+
+[Field_4]
+Key=WorkOrderTemplateDescription
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Template Description
+ValueRequired=True
+
+[Field_5]
+Key=WorkId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Id
+ValueRequired=True
+
+[Field_6]
+Key=WorkName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Work Name
+ValueRequired=True
+
+[Field_7]
+Key=WorkDescription
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Work Description
+ValueRequired=True
+
+[Field_8]
+Key=EnumWorkType
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Type
+ValueRequired=True
+
+[Field_9]
+Key=SetupTime
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Setup Time
+ValueRequired=True
+
+[Field_10]
+Key=RunTime
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Runtime
+ValueRequired=True
+
+[Field_11]
+Key=WorkCost
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Work Cost
+ValueRequired=True
+
+[Field_12]
+Key=WorkRatio
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Work Ratio
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=WorkOrderNumber
+Key_2=WorkName
+

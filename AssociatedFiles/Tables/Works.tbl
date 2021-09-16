@@ -1,0 +1,62 @@
+[Table]
+Name=Works
+
+[Field_1]
+Key=WorkId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Id
+ValueRequired=True
+
+[Field_2]
+Key=WorkName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Work Name
+ValueRequired=True
+
+[Field_3]
+Key=WorkDescription
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Work Description
+ValueRequired=True
+
+[Field_4]
+Key=EnumWorkType
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Work Type
+ValueRequired=True
+
+[Field_5]
+Key=SetupTime
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Setup Time
+ValueRequired=True
+
+[Field_6]
+Key=RunTime
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Runtime
+ValueRequired=True
+
+[Field_7]
+Key=WorkCost
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Work Cost
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=WorkName
+

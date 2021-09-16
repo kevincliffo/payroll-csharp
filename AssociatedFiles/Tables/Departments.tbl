@@ -1,0 +1,23 @@
+[Table]
+Name=Departments
+
+[Field_1]
+Key=DepartmentId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Department Id
+ValueRequired=True
+
+[Field_2]
+Key=DepartmentName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Department Name
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=DepartmentName
+
+

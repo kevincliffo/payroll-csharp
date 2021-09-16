@@ -1,0 +1,46 @@
+[Table]
+Name=license
+
+[Field_1]
+Key=Code
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Code
+ValueRequired=True
+
+[Field_2]
+Key=LicenseKey
+Type=String
+Length=254
+InitialValue=
+LocalizedName=License Key
+ValueRequired=True
+
+[Field_3]
+Key=LicenseValue
+Type=String
+Length=254
+InitialValue=
+LocalizedName=License Value
+ValueRequired=True
+
+[Field_4]
+Key=ActivationDate
+Type=String
+Length=20
+InitialValue=
+LocalizedName=Activation Date
+ValueRequired=True
+
+[Field_5]
+Key=ActivationTime
+Type=String
+Length=20
+InitialValue=
+LocalizedName=Activation Time
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=Code
+

@@ -1,0 +1,31 @@
+[Table]
+Name=BasicData
+
+[Field_1]
+Key=BasicDataId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Basic Data Id
+ValueRequired=True
+
+[Field_2]
+Key=EntryKey
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Entry Key
+ValueRequired=True
+
+[Field_3]
+Key=EntryValue
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Entry Value
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=BasicDataId
+Key_2=EntryKey
+

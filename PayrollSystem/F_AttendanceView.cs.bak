@@ -1,0 +1,260 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using DataBaseManagement;
+using Utilities;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using Models;
+
+namespace PayRollSystem
+{
+    public partial class F_AttendanceView : Form
+    {
+        private Utilities.Utilities utsx = null;
+        private Form mdixForm = null;
+        private DatabaseConnection dbcx = null;
+        private const string szxEMPTY = "";
+        private ApplicationPathCarrier apcx = null;
+        private FormUtilities fusx = null;
+        private Employees_DS e_dsx = null;
+
+        public F_AttendanceView(Form mdivForm,
+                                DatabaseConnection dbcv,
+                                FormUtilities fusv)
+        {
+            InitializeComponent();
+
+            mdixForm = mdivForm;
+            dbcx = dbcv;
+            fusx = fusv;
+            utsx = new Utilities.Utilities();
+
+            e_dsx = new Employees_DS(dbcx);
+        }
+
+        private void chkbSpecificEmployee_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbSpecificEmployee.Checked)
+            {
+                lblEmployee.Visible = true;
+                cbEmployee.Visible = true;
+            }
+            else 
+            {
+                lblEmployee.Visible = false;
+                cbEmployee.Visible = false;            
+            }
+        }
+
+        private void F_AttendanceView_Load(object sender, EventArgs e)
+        {
+            lblEmployee.Visible = false;
+            cbEmployee.Visible = false;
+
+            cbAttendanceType.SelectedIndex = 0;
+            XX_PopulateEmployeeComboBoxWithEmployeeDetails();
+        }
+
+        private void XX_PopulateEmployeeComboBoxWithEmployeeDetails()
+        { 
+                                        string szSQL = string.Empty;
+                                        string szEmployeeData = string.Empty;
+                                        string szErrorMessage = string.Empty;
+                                        bool bErrorFound = false;
+                                        bool bEndOfFind = false;
+                                        Fields fds = null;
+
+            while(true)
+            {
+                e_dsx.GetFirstRecordFromDataBase(ref fds,
+                                                 ref bEndOfFind,
+                                                 ref bErrorFound,
+                                                 ref szErrorMessage);
+
+                if (bEndOfFind)
+                {
+                    utsx.ShowMessage("Nothing Found",
+                                     EnumsCollection.EnumMessageType.emtError);
+                    break;
+                }
+
+                while (true)
+                {
+                    if (bErrorFound)
+                    {
+                        utsx.ShowMessage(szErrorMessage, 
+                                         EnumsCollection.EnumMessageType.emtError);
+                        break;
+                    }
+
+                    if (bEndOfFind)
+                    {
+                        break;
+                    }
+
+                    szEmployeeData = fds.ItemIsField("EmployeeId").StringValue
+                                   + "."
+                                   + fds.ItemIsField("FirstName").StringValue
+                                   + "."
+                                   + fds.ItemIsField("LastName").StringValue
+                                   + "."
+                                   + fds.ItemIsField("OtherName").StringValue;
+
+                    cbEmployee.Items.Add(szEmployeeData);
+                    e_dsx.GetNextRecordFromDataBase(ref fds,
+                                                    ref bEndOfFind,
+                                                    ref bErrorFound,
+                                                    ref szErrorMessage);
+
+                }
+
+                break;
+            }
+            
+            cbEmployee.SelectedIndex = 0;
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+                                        string szSQL = string.Empty;
+                                        string szAttendanceType = string.Empty;
+                                        string szEmployeeId = string.Empty;
+                                        MySqlDataReader msql_dr = null;
+                                        string szErrorMessage = string.Empty;
+                                        bool bErrorFound = false;
+                                        DataGridViewRow dgvRow = null;
+
+            XX_RefreshDataGridView();
+            szAttendanceType= cbAttendanceType.SelectedIndex.ToString();
+            
+            szSQL = " SELECT attendance.AttendanceId, "
+                  + "        attendance.AttendanceType, "
+                  + "        attendance.Date, "
+                  + "        attendance.Hours, "
+                  + "        employees.EmployeeId, "
+                  + "        employees.FirstName, "
+                  + "        employees.LastName, "
+                  + "        employees.RegNumber, "
+                  + "        employees.Salary "
+                  + " FROM attendance "
+                  + " INNER JOIN employees ON employees.EmployeeId = attendance.EmployeeId "
+                  + " WHERE AttendanceType = " + szAttendanceType;
+
+            if (chkbSpecificEmployee.Checked)
+            {
+                szEmployeeId = cbEmployee.SelectedItem.ToString()[0].ToString();
+                szSQL = szSQL
+                      + " AND employees.EmployeeId = " + szEmployeeId;
+            }
+
+            dbcx.ExecuteSQL(szSQL,
+                            ref bErrorFound,
+                            ref szErrorMessage,
+                            ref msql_dr);
+
+            while (true)
+            {
+                if (msql_dr == null)
+                {
+                    break;
+                }
+
+                while(msql_dr.Read() == true)
+                {
+                    try
+                    {
+                        
+                        dgvRow = (DataGridViewRow)dgvAttendanceView.Rows[0].Clone();
+                        dgvRow.Cells[0].Value = msql_dr["AttendanceId"].ToString();
+                        dgvRow.Cells[1].Value = msql_dr["AttendanceType"].ToString();
+                        dgvRow.Cells[2].Value = msql_dr["Date"].ToString();
+                        dgvRow.Cells[3].Value = msql_dr["Hours"].ToString();
+                        dgvRow.Cells[4].Value = msql_dr["EmployeeId"].ToString();
+                        dgvRow.Cells[5].Value = msql_dr["FirstName"].ToString();
+                        dgvRow.Cells[6].Value = msql_dr["LastName"].ToString();
+                        dgvRow.Cells[7].Value = msql_dr["RegNumber"].ToString();
+                        dgvRow.Cells[8].Value = msql_dr["Salary"].ToString();
+
+
+                        dgvAttendanceView.Rows.Add(dgvRow);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                break;
+            }
+
+            XX_DisplayTotals();
+            if (!msql_dr.IsClosed)
+            {
+                msql_dr.Close();
+                msql_dr.Dispose();
+            }
+        }
+
+        private void XX_RefreshDataGridView()
+        {
+            dgvAttendanceView.Rows.Clear();
+            dgvAttendanceView.Refresh();
+        }
+
+        private void XX_DisplayTotals()
+        { 
+                                        DataGridViewRow dgvRow = null;
+                                        string szHours = string.Empty;
+                                        double dHours = 0;
+                                        string szSalary = string.Empty;
+                                        double dSalary = 0;
+                                        int nRowsCount = 0;
+
+            foreach(DataGridViewRow dgvr in dgvAttendanceView.Rows)
+            {
+                if (dgvr.Cells[3].Value != null)
+                {
+                    szHours = dgvr.Cells[3].Value.ToString();
+
+                    if (szHours.Trim() != "")
+                    {
+                        dHours = dHours
+                               + Convert.ToDouble(szHours);
+                    }
+                }
+
+                if (dgvr.Cells[8].Value != null)
+                {
+                    szSalary = dgvr.Cells[8].Value.ToString();
+
+                    if (szSalary.Trim() != "")
+                    {
+                        dSalary = dSalary
+                                + Convert.ToDouble(szSalary);
+                    }
+                }
+            }
+
+            nRowsCount = dgvAttendanceView.Rows.Count;
+            //dgvAttendanceView.Rows.Add();
+
+            DataGridViewCellStyle dgvcs = new DataGridViewCellStyle();
+            
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[0].Value = "Totals";
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[0].Style.Font = new Font("Calibri", 9, FontStyle.Bold);
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[0].Style.Alignment = DataGridViewContentAlignment.BottomLeft; 
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[3].Value = dHours.ToString();
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[3].Style.Font = new Font("Calibri", 9, FontStyle.Bold);
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[3].Style.Alignment = DataGridViewContentAlignment.BottomRight;
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[8].Value = dSalary.ToString();
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[8].Style.Font = new Font("Calibri", 9, FontStyle.Bold);
+            dgvAttendanceView.Rows[nRowsCount - 1].Cells[8].Style.Alignment = DataGridViewContentAlignment.BottomRight; 
+            
+        }
+    }
+}

@@ -1,0 +1,2 @@
+http://stackoverflow.com/questions/24486858/group-rows-in-datagridview
+http://10tec.com/articles/datagridview-grouping-two-recipes.aspx

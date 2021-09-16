@@ -1,0 +1,183 @@
+[Table]
+Name=Staffs
+
+[Field_1]
+Key=StaffId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Staff Id
+ValueRequired=True
+
+[Field_2]
+Key=Surname
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Surname
+ValueRequired=True
+
+[Field_3]
+Key=OtherNames
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Other Names
+ValueRequired=True
+
+[Field_4]
+Key=IdentificationNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Identification Number
+ValueRequired=True
+
+[Field_5]
+Key=MobileNo
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Mobile No
+ValueRequired=True
+
+[Field_6]
+Key=EmailAddress
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Email Address
+ValueRequired=True
+
+[Field_7]
+Key=EmploymentDate
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Employment Date
+ValueRequired=True
+
+[Field_8]
+Key=Department
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Department
+ValueRequired=True
+
+[Field_9]
+Key=SubDepartment
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Sub Department
+ValueRequired=False
+
+[Field_10]
+Key=EmployeeType
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Employee Type
+ValueRequired=False
+
+[Field_11]
+Key=Address
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Address
+ValueRequired=True
+
+[Field_12]
+Key=KRAPin
+Type=String
+Length=100
+InitialValue=
+LocalizedName=KRA Pin
+ValueRequired=True
+
+[Field_13]
+Key=NHIFNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=NHIF Number
+ValueRequired=True
+
+[Field_14]
+Key=NSSFNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=NSSF Number
+ValueRequired=True
+
+[Field_15]
+Key=BasicSalary
+Type=Double
+Length=0
+InitialValue=0.00
+LocalizedName=Basic Salary
+ValueRequired=True
+
+[Field_16]
+Key=NextOfKinName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Next of Kin Name
+ValueRequired=True
+
+[Field_17]
+Key=NextOfKinMobileNumber
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Next of Kin Mobile Number
+ValueRequired=True
+
+[Field_18]
+Key=NextOfKinEmail
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Next of Kin Email
+ValueRequired=True
+
+[Field_19]
+Key=HouseAllowance
+Type=Double
+Length=0
+InitialValue=0.00
+LocalizedName=House Allowance
+ValueRequired=True
+
+[Field_20]
+Key=TravelAllowance
+Type=Double
+Length=0
+InitialValue=0.00
+LocalizedName=Travel Allowance
+ValueRequired=True
+
+[Field_21]
+Key=MedicalAllowance
+Type=Double
+Length=0
+InitialValue=0.00
+LocalizedName=Medical Allowance
+ValueRequired=True
+
+[Field_22]
+Key=Pension
+Type=Double
+Length=0
+InitialValue=0.00
+LocalizedName=Pension
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=IdentificationNumber
+
+

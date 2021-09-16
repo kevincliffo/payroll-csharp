@@ -1,0 +1,47 @@
+[Table]
+Name=attendance
+
+[Field_1]
+Key=AttendanceId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Attendance Id
+ValueRequired=True
+
+[Field_2]
+Key=EmployeeId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Employee Id
+ValueRequired=True
+
+[Field_3]
+Key=AttendanceType
+Type=Integer
+Length=0
+InitialValue=
+LocalizedName=Attendance Type
+ValueRequired=True
+
+[Field_4]
+Key=Date
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Date
+ValueRequired=True
+
+[Field_5]
+Key=Hours
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Hours
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=AttendanceId
+
+

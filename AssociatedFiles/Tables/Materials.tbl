@@ -1,0 +1,86 @@
+[Table]
+Name=Materials
+
+[Field_1]
+Key=MaterialId
+Type=Integer
+Length=0
+InitialValue=0
+LocalizedName=Material Id
+ValueRequired=True
+
+[Field_2]
+Key=MaterialName
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Material Name
+ValueRequired=True
+
+[Field_3]
+Key=MaterialDescription
+Type=String
+Length=200
+InitialValue=
+LocalizedName=Material Description
+ValueRequired=True
+
+[Field_4]
+Key=UnitOfMeasure
+Type=String
+Length=200
+InitialValue=
+LocalizedName=Unit Of Measure
+ValueRequired=True
+
+[Field_5]
+Key=Quantity
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Quantity
+ValueRequired=True
+
+[Field_6]
+Key=EnumMaterialManagementType
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Management Type
+ValueRequired=True
+
+[Field_7]
+Key=PricePerUnit
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Price Per Unit
+ValueRequired=True
+
+[Field_8]
+Key=CreationDate
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Creation Date
+ValueRequired=True
+
+[Field_9]
+Key=PurchaseDate
+Type=String
+Length=100
+InitialValue=
+LocalizedName=Purchase Date
+ValueRequired=True
+
+[Field_10]
+Key=TotalPrice
+Type=Double
+Length=0
+InitialValue=
+LocalizedName=Total Price
+ValueRequired=True
+
+[PrimaryKeys]
+Key_1=MaterialName
+
