@@ -30,65 +30,65 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Main));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Administration Interface");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Users");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Departments");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Defaults");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Add Staff");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("View Staff");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Attendance");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Attendance View");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Staff", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Administration", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Suppliers");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Items Master");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Goods Receipt");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Goods Issue");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Inventory", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Add Work");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Internal Work List");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("External Work List");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Add Material");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Materials List");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Work Order Template");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Work Order Templates List");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Work Order Templates", new System.Windows.Forms.TreeNode[] {
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Work Order");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Production", new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20,
-            treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Staff Payroll");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Casual Staff Payroll");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Payoll List");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Payroll", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode27,
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Menus", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode15,
-            treeNode25,
-            treeNode29});
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Administration Interface");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Users");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Departments");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Defaults");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Add Staff");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("View Staff");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Attendance");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Attendance View");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Staff", new System.Windows.Forms.TreeNode[] {
+            treeNode35,
+            treeNode36,
+            treeNode37,
+            treeNode38});
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Administration", new System.Windows.Forms.TreeNode[] {
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode39});
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Suppliers");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Items Master");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Goods Receipt");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Goods Issue");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Inventory", new System.Windows.Forms.TreeNode[] {
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44});
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Add Work");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Internal Work List");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("External Work List");
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Add Material");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Materials List");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Work Order Template");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Work Order Templates List");
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Work Order Templates", new System.Windows.Forms.TreeNode[] {
+            treeNode51,
+            treeNode52});
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Work Order");
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Production", new System.Windows.Forms.TreeNode[] {
+            treeNode46,
+            treeNode47,
+            treeNode48,
+            treeNode49,
+            treeNode50,
+            treeNode53,
+            treeNode54});
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Staff Payroll");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Casual Staff Payroll");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Payoll List");
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Payroll", new System.Windows.Forms.TreeNode[] {
+            treeNode56,
+            treeNode57,
+            treeNode58});
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Menus", new System.Windows.Forms.TreeNode[] {
+            treeNode40,
+            treeNode45,
+            treeNode55,
+            treeNode59});
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNHIFRates = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,8 +106,8 @@
             this.EmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAddStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiViewStaff = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAttendanceView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAttendance = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAttendanceView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStaffPayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCasualStaffPayroll = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,6 +141,7 @@
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.tvMenus = new System.Windows.Forms.TreeView();
             this.ilTreeViewImages = new System.Windows.Forms.ImageList(this.components);
+            this.tsmiSuppliersTable = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.ssMessages.SuspendLayout();
             this.tsNavigation.SuspendLayout();
@@ -298,19 +299,19 @@
             this.tsmiViewStaff.Text = "&View Staff";
             this.tsmiViewStaff.Click += new System.EventHandler(this.tsmiViewStaff_Click);
             // 
-            // tsmiAttendanceView
-            // 
-            this.tsmiAttendanceView.Name = "tsmiAttendanceView";
-            this.tsmiAttendanceView.Size = new System.Drawing.Size(182, 24);
-            this.tsmiAttendanceView.Text = "A&ttendance View";
-            this.tsmiAttendanceView.Click += new System.EventHandler(this.tsmiAttendanceView_Click);
-            // 
             // tsmiAttendance
             // 
             this.tsmiAttendance.Name = "tsmiAttendance";
             this.tsmiAttendance.Size = new System.Drawing.Size(182, 24);
             this.tsmiAttendance.Text = "Atte&ndance";
             this.tsmiAttendance.Click += new System.EventHandler(this.tsmiAttendance_Click);
+            // 
+            // tsmiAttendanceView
+            // 
+            this.tsmiAttendanceView.Name = "tsmiAttendanceView";
+            this.tsmiAttendanceView.Size = new System.Drawing.Size(182, 24);
+            this.tsmiAttendanceView.Text = "A&ttendance View";
+            this.tsmiAttendanceView.Click += new System.EventHandler(this.tsmiAttendanceView_Click);
             // 
             // tsmiPayroll
             // 
@@ -356,7 +357,7 @@
             // tsmiSupplier
             // 
             this.tsmiSupplier.Name = "tsmiSupplier";
-            this.tsmiSupplier.Size = new System.Drawing.Size(131, 24);
+            this.tsmiSupplier.Size = new System.Drawing.Size(180, 24);
             this.tsmiSupplier.Text = "&Supplier";
             this.tsmiSupplier.Click += new System.EventHandler(this.tsmiSupplier_Click);
             // 
@@ -382,7 +383,8 @@
             this.tsmiUsersTable,
             this.tsmiStaffsTable,
             this.tsmiDepartmentsTable,
-            this.tsmiSubDepartmentsTable});
+            this.tsmiSubDepartmentsTable,
+            this.tsmiSuppliersTable});
             this.tablesToolStripMenuItem.Font = new System.Drawing.Font("Ubuntu Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
             this.tablesToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
@@ -585,120 +587,120 @@
             this.tvMenus.ImageList = this.ilTreeViewImages;
             this.tvMenus.Location = new System.Drawing.Point(0, 66);
             this.tvMenus.Name = "tvMenus";
-            treeNode1.ImageKey = "AdminInterface.png";
-            treeNode1.Name = "mnuAdminInterface";
-            treeNode1.SelectedImageIndex = 24;
-            treeNode1.Text = "Administration Interface";
-            treeNode2.ImageKey = "users.ico";
-            treeNode2.Name = "mnuUsers";
-            treeNode2.SelectedImageIndex = 0;
-            treeNode2.Text = "Users";
-            treeNode3.ImageKey = "Department.png";
-            treeNode3.Name = "mnuDepartments";
-            treeNode3.SelectedImageIndex = 25;
-            treeNode3.Text = "Departments";
-            treeNode4.Name = "mnuDefaults";
-            treeNode4.Text = "Defaults";
-            treeNode5.ImageKey = "employee.ico";
-            treeNode5.Name = "mnuAddStaff";
-            treeNode5.SelectedImageIndex = 14;
-            treeNode5.Text = "Add Staff";
-            treeNode6.ImageKey = "StaffList.png";
-            treeNode6.Name = "mnuViewStaff";
-            treeNode6.SelectedImageIndex = 28;
-            treeNode6.Text = "View Staff";
-            treeNode7.Name = "mnuAttendance";
-            treeNode7.Text = "Attendance";
-            treeNode8.ImageKey = "Attendance.png";
-            treeNode8.Name = "mnuAttendanceView";
-            treeNode8.SelectedImageIndex = 27;
-            treeNode8.Text = "Attendance View";
-            treeNode9.Name = "mnuStaff";
-            treeNode9.Text = "Staff";
-            treeNode10.ImageKey = "Administrator.png";
-            treeNode10.Name = "mnuAdministration";
-            treeNode10.SelectedImageKey = "(default)";
-            treeNode10.Text = "Administration";
-            treeNode11.ImageKey = "hotel-supplier.png";
-            treeNode11.Name = "mnuSuppliers";
-            treeNode11.Text = "Suppliers";
-            treeNode12.ImageKey = "Items.png";
-            treeNode12.Name = "mnuItemsMaster";
-            treeNode12.SelectedImageIndex = 21;
-            treeNode12.Text = "Items Master";
-            treeNode13.ImageKey = "GoodsReceipt.png";
-            treeNode13.Name = "mnuGoodsReceipt";
-            treeNode13.SelectedImageIndex = 20;
-            treeNode13.Text = "Goods Receipt";
-            treeNode14.ImageKey = "GoodsIssue.png";
-            treeNode14.Name = "mnuGoodsIssue";
-            treeNode14.SelectedImageIndex = 19;
-            treeNode14.Text = "Goods Issue";
-            treeNode15.ImageKey = "warehouse.png";
-            treeNode15.Name = "mnuInventory";
-            treeNode15.SelectedImageIndex = 18;
-            treeNode15.Text = "Inventory";
-            treeNode16.ImageKey = "handyman-tools.png";
-            treeNode16.Name = "mnuAddWork";
-            treeNode16.SelectedImageIndex = 15;
-            treeNode16.Text = "Add Work";
-            treeNode17.ImageKey = "handyman-tools.png";
-            treeNode17.Name = "mnuInternalWorkList";
-            treeNode17.SelectedImageIndex = 15;
-            treeNode17.Text = "Internal Work List";
-            treeNode18.ImageKey = "handyman-tools.png";
-            treeNode18.Name = "mnuExternalWorkList";
-            treeNode18.SelectedImageIndex = 15;
-            treeNode18.Text = "External Work List";
-            treeNode19.ImageKey = "Materials.png";
-            treeNode19.Name = "mnuAddMaterial";
-            treeNode19.SelectedImageIndex = 31;
-            treeNode19.Text = "Add Material";
-            treeNode20.ImageKey = "MaterialsList.png";
-            treeNode20.Name = "mnuMaterialsList";
-            treeNode20.SelectedImageIndex = 34;
-            treeNode20.Text = "Materials List";
-            treeNode21.ImageKey = "WorkOrder.png";
-            treeNode21.Name = "mnuWorkOrderTemplate";
-            treeNode21.SelectedImageIndex = 33;
-            treeNode21.Text = "Work Order Template";
-            treeNode22.ImageKey = "WorkOrder.png";
-            treeNode22.Name = "mnuWorkOrderTemplatesList";
-            treeNode22.SelectedImageIndex = 33;
-            treeNode22.Text = "Work Order Templates List";
-            treeNode23.ImageKey = "WorkOrder.png";
-            treeNode23.Name = "mnuMainWorkOrderTemplate";
-            treeNode23.SelectedImageIndex = 33;
-            treeNode23.Text = "Work Order Templates";
-            treeNode24.ImageKey = "WorkOrder.png";
-            treeNode24.Name = "mnuWorkOrder";
-            treeNode24.SelectedImageIndex = 33;
-            treeNode24.Text = "Work Order";
-            treeNode25.ImageKey = "Work.png";
-            treeNode25.Name = "mnuProduction";
-            treeNode25.SelectedImageIndex = 32;
-            treeNode25.Text = "Production";
-            treeNode26.ImageKey = "payroll1600.png";
-            treeNode26.Name = "mnuStaffPayroll";
-            treeNode26.SelectedImageIndex = 35;
-            treeNode26.Text = "Staff Payroll";
-            treeNode27.ImageKey = "payroll1600.png";
-            treeNode27.Name = "mnuCasualStaffPayroll";
-            treeNode27.SelectedImageIndex = 35;
-            treeNode27.Text = "Casual Staff Payroll";
-            treeNode28.ImageKey = "PaymentList.png";
-            treeNode28.Name = "mnuPayrollList";
-            treeNode28.SelectedImageIndex = 29;
-            treeNode28.Text = "Payoll List";
-            treeNode29.ImageKey = "give-money.png";
-            treeNode29.Name = "mnuPayroll";
-            treeNode29.Text = "Payroll";
-            treeNode30.ImageKey = "order.ico";
-            treeNode30.Name = "mnuMenus";
-            treeNode30.SelectedImageIndex = 24;
-            treeNode30.Text = "Menus";
+            treeNode31.ImageKey = "AdminInterface.png";
+            treeNode31.Name = "mnuAdminInterface";
+            treeNode31.SelectedImageIndex = 24;
+            treeNode31.Text = "Administration Interface";
+            treeNode32.ImageKey = "users.ico";
+            treeNode32.Name = "mnuUsers";
+            treeNode32.SelectedImageIndex = 0;
+            treeNode32.Text = "Users";
+            treeNode33.ImageKey = "Department.png";
+            treeNode33.Name = "mnuDepartments";
+            treeNode33.SelectedImageIndex = 25;
+            treeNode33.Text = "Departments";
+            treeNode34.Name = "mnuDefaults";
+            treeNode34.Text = "Defaults";
+            treeNode35.ImageKey = "employee.ico";
+            treeNode35.Name = "mnuAddStaff";
+            treeNode35.SelectedImageIndex = 14;
+            treeNode35.Text = "Add Staff";
+            treeNode36.ImageKey = "StaffList.png";
+            treeNode36.Name = "mnuViewStaff";
+            treeNode36.SelectedImageIndex = 28;
+            treeNode36.Text = "View Staff";
+            treeNode37.Name = "mnuAttendance";
+            treeNode37.Text = "Attendance";
+            treeNode38.ImageKey = "Attendance.png";
+            treeNode38.Name = "mnuAttendanceView";
+            treeNode38.SelectedImageIndex = 27;
+            treeNode38.Text = "Attendance View";
+            treeNode39.Name = "mnuStaff";
+            treeNode39.Text = "Staff";
+            treeNode40.ImageKey = "Administrator.png";
+            treeNode40.Name = "mnuAdministration";
+            treeNode40.SelectedImageKey = "(default)";
+            treeNode40.Text = "Administration";
+            treeNode41.ImageKey = "hotel-supplier.png";
+            treeNode41.Name = "mnuSuppliers";
+            treeNode41.Text = "Suppliers";
+            treeNode42.ImageKey = "Items.png";
+            treeNode42.Name = "mnuItemsMaster";
+            treeNode42.SelectedImageIndex = 21;
+            treeNode42.Text = "Items Master";
+            treeNode43.ImageKey = "GoodsReceipt.png";
+            treeNode43.Name = "mnuGoodsReceipt";
+            treeNode43.SelectedImageIndex = 20;
+            treeNode43.Text = "Goods Receipt";
+            treeNode44.ImageKey = "GoodsIssue.png";
+            treeNode44.Name = "mnuGoodsIssue";
+            treeNode44.SelectedImageIndex = 19;
+            treeNode44.Text = "Goods Issue";
+            treeNode45.ImageKey = "warehouse.png";
+            treeNode45.Name = "mnuInventory";
+            treeNode45.SelectedImageIndex = 18;
+            treeNode45.Text = "Inventory";
+            treeNode46.ImageKey = "handyman-tools.png";
+            treeNode46.Name = "mnuAddWork";
+            treeNode46.SelectedImageIndex = 15;
+            treeNode46.Text = "Add Work";
+            treeNode47.ImageKey = "handyman-tools.png";
+            treeNode47.Name = "mnuInternalWorkList";
+            treeNode47.SelectedImageIndex = 15;
+            treeNode47.Text = "Internal Work List";
+            treeNode48.ImageKey = "handyman-tools.png";
+            treeNode48.Name = "mnuExternalWorkList";
+            treeNode48.SelectedImageIndex = 15;
+            treeNode48.Text = "External Work List";
+            treeNode49.ImageKey = "Materials.png";
+            treeNode49.Name = "mnuAddMaterial";
+            treeNode49.SelectedImageIndex = 31;
+            treeNode49.Text = "Add Material";
+            treeNode50.ImageKey = "MaterialsList.png";
+            treeNode50.Name = "mnuMaterialsList";
+            treeNode50.SelectedImageIndex = 34;
+            treeNode50.Text = "Materials List";
+            treeNode51.ImageKey = "WorkOrder.png";
+            treeNode51.Name = "mnuWorkOrderTemplate";
+            treeNode51.SelectedImageIndex = 33;
+            treeNode51.Text = "Work Order Template";
+            treeNode52.ImageKey = "WorkOrder.png";
+            treeNode52.Name = "mnuWorkOrderTemplatesList";
+            treeNode52.SelectedImageIndex = 33;
+            treeNode52.Text = "Work Order Templates List";
+            treeNode53.ImageKey = "WorkOrder.png";
+            treeNode53.Name = "mnuMainWorkOrderTemplate";
+            treeNode53.SelectedImageIndex = 33;
+            treeNode53.Text = "Work Order Templates";
+            treeNode54.ImageKey = "WorkOrder.png";
+            treeNode54.Name = "mnuWorkOrder";
+            treeNode54.SelectedImageIndex = 33;
+            treeNode54.Text = "Work Order";
+            treeNode55.ImageKey = "Work.png";
+            treeNode55.Name = "mnuProduction";
+            treeNode55.SelectedImageIndex = 32;
+            treeNode55.Text = "Production";
+            treeNode56.ImageKey = "payroll1600.png";
+            treeNode56.Name = "mnuStaffPayroll";
+            treeNode56.SelectedImageIndex = 35;
+            treeNode56.Text = "Staff Payroll";
+            treeNode57.ImageKey = "payroll1600.png";
+            treeNode57.Name = "mnuCasualStaffPayroll";
+            treeNode57.SelectedImageIndex = 35;
+            treeNode57.Text = "Casual Staff Payroll";
+            treeNode58.ImageKey = "PaymentList.png";
+            treeNode58.Name = "mnuPayrollList";
+            treeNode58.SelectedImageIndex = 29;
+            treeNode58.Text = "Payoll List";
+            treeNode59.ImageKey = "give-money.png";
+            treeNode59.Name = "mnuPayroll";
+            treeNode59.Text = "Payroll";
+            treeNode60.ImageKey = "order.ico";
+            treeNode60.Name = "mnuMenus";
+            treeNode60.SelectedImageIndex = 24;
+            treeNode60.Text = "Menus";
             this.tvMenus.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode30});
+            treeNode60});
             this.tvMenus.SelectedImageIndex = 0;
             this.tvMenus.Size = new System.Drawing.Size(248, 327);
             this.tvMenus.TabIndex = 6;
@@ -744,6 +746,13 @@
             this.ilTreeViewImages.Images.SetKeyName(33, "WorkOrder.png");
             this.ilTreeViewImages.Images.SetKeyName(34, "MaterialsList.png");
             this.ilTreeViewImages.Images.SetKeyName(35, "payroll1600.png");
+            // 
+            // tsmiSuppliersTable
+            // 
+            this.tsmiSuppliersTable.Name = "tsmiSuppliersTable";
+            this.tsmiSuppliersTable.Size = new System.Drawing.Size(183, 24);
+            this.tsmiSuppliersTable.Text = "Su&ppliers";
+            this.tsmiSuppliersTable.Click += new System.EventHandler(this.tsmiSuppliersTable_Click);
             // 
             // F_Main
             // 
@@ -827,6 +836,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSubDepartmentsTable;
         private System.Windows.Forms.ToolStripMenuItem tsmiDepartmentsView;
         private System.Windows.Forms.ToolStripMenuItem tsmiAttendance;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSuppliersTable;
     }
 }
 

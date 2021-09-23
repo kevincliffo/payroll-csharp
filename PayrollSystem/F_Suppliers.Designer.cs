@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNavigation = new System.Windows.Forms.Button();
             this.gbDetails = new System.Windows.Forms.GroupBox();
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -119,6 +119,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnRemove
             // 
@@ -131,19 +132,20 @@
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnAdd
+            // btnNavigation
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Font = new System.Drawing.Font("Ubuntu Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(16, 520);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 45);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNavigation.Font = new System.Drawing.Font("Ubuntu Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavigation.Location = new System.Drawing.Point(16, 520);
+            this.btnNavigation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNavigation.Name = "btnNavigation";
+            this.btnNavigation.Size = new System.Drawing.Size(100, 45);
+            this.btnNavigation.TabIndex = 3;
+            this.btnNavigation.Text = "Add";
+            this.btnNavigation.UseVisualStyleBackColor = true;
+            this.btnNavigation.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gbDetails
             // 
@@ -302,7 +304,7 @@
             this.Controls.Add(this.gbDetails);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnNavigation);
             this.Controls.Add(this.gbHeader);
             this.Font = new System.Drawing.Font("Ubuntu Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -329,7 +331,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNavigation;
         private System.Windows.Forms.GroupBox gbDetails;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

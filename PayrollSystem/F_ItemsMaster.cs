@@ -39,5 +39,10 @@ namespace PayRollSystem
             scx = new SharedComponents(dbcx);
             this.Tag = Utilities.EnumsCollection.EnumFormType.eftMaster;
         }
+
+        private void F_ItemsMaster_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

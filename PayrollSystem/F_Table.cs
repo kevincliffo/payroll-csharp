@@ -100,6 +100,7 @@ namespace PayRollSystem
                 case "Staff":
                 case "Users":
                 case "Customers":
+                case "Suppliers":
                     szIconName = "users.ico";
                     break;
 

@@ -1214,5 +1214,11 @@ namespace PayRollSystem
         {
             XX_LaunchAttendance();
         }
+
+        private void tsmiSuppliersTable_Click(object sender, EventArgs e)
+        {
+            XX_LaunchTable("Suppliers",
+                           sup_dsx);
+        }
     }
 }
